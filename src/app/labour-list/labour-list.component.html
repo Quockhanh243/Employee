@@ -1,0 +1,63 @@
+<div class="content container-fluid">
+  <div class="sidenav col-md-2">
+    <a routerLink="/department/list">Quản Lý Phòng Ban</a>
+    <a routerLink="/labour/list">Quản Lý Hợp Đồng</a>
+    <a routerLink="/education/list">Quản Lý Học Vấn</a>
+    <a routerLink="/process/list">Quá Trình Công Tác</a>
+    <button class="dropdown-btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Khen Thưởng - Kỉ Luật
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+      <a routerLink="/adward" class="dropdown-item">Khen Thưởng</a>
+      <a routerLink="/disclipline" class="dropdown-item">Kỉ Luật</a>
+    </div>
+  </div>
+  <div class="col-md-7 content2">
+    <h1>Hợp Đồng Lao Động</h1>
+    <button class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Tạo Mới</button>
+    <table id="example2" class="table table-bordered table-hover dataTable" role="grid"
+           aria-describedby="example2_info">
+      <thead>
+      <tr role="row">
+        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending"
+            style="width: 10%">Mã NV
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Browser: activate to sort column ascending" style="width: 300px; text-align: center">Tên NV
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Browser: activate to sort column ascending" style="width: 300px; text-align: center">Phòng Ban
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Browser: activate to sort column ascending" style="width: 300px; text-align: center">Chức Vụ
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Browser: activate to sort column ascending" style="width: 300px; text-align: center">Loại Hợp Đồng
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Browser: activate to sort column ascending" style="width: 300px; text-align: center">Từ Ngày
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Browser: activate to sort column ascending" style="width: 300px; text-align: center">Đến Ngày
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Platform(s): activate to sort column ascending" style="width: 200px; text-align: center">Nội Dung
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Engine version: activate to sort column ascending">Ghi Chú
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
+  <div class="col-md-3">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-success my-2 my-sm-0" type="button">Search <i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>

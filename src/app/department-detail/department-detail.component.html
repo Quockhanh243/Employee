@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <h1>Phòng có id : {{departmentID}}</h1><br>
+  <div *ngFor="let i of Department">
+    <div *ngIf = "i.id == departmentID">
+      {{i.name}}
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary float-left" id="previous" (click) = goPre() *ngIf="departmentID > 1"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+    <button class="btn btn-primary float-right" id="next" (click) = goNext() *ngIf="departmentID < 3"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+  </div>  
+</div>

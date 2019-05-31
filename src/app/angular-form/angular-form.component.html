@@ -1,0 +1,67 @@
+<div class="container">
+  <h1>Demo Form</h1>
+  <form #regForm="ngForm">
+    <hr/>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" required class="form-control" #name="ngModel" name="userName" [(ngModel)]="user.name" [class.is-invalid]="name.invalid && name.touched">
+      <small [class.d-none]="name.valid || name.untouched" class="text-danger">Bạn phải nhập vào họ tên</small>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="user.email"> 
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" #phone="ngModel" class="form-control" name="tel" pattern="^\d{10}$" [(ngModel)]="user.phone" [class.is-invalid]="phone.invalid && phone.touched"> 
+      <small [class.d-none]="phone.valid || phone.untouched" class="text-danger">Bạn phải nhập số điện thoại hợp lệ</small>
+    </div>
+
+    <div class="form-group">
+      <label class="form-check-label">Nghề nghiệp</label>
+      <select (blur)="select(choose.value)" (change)="select(choose.value)" #choose="ngModel" [class.is-invalid]="error && choose.touched" class="custom-select"  name="job" [(ngModel)]="user.job" >
+        <option value="default">Vui Lòng Chọn</option>
+        <option *ngFor="let i of job">{{i}}</option>
+      </select>
+      <small [class.d-none]="!error || choose.untouched" class="text-danger">Vui lòng chọn nghề nghiệp</small>
+    </div>
+
+    <div ngModelGroup="address">
+      <div class="form-group">
+        <label class="form-check-label">Địa Chỉ</label>
+        <input type="text" class="form-control" name="district" ngModel>
+      </div>
+      <div class="form-group">
+        <label class="form-check-label">Thành Phố</label>
+        <input type="text" class="form-control" name="city" ngModel>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label>Giới Tính</label>
+      <div class="form-check" *ngFor="let i of sex">
+        <input class="form-check-input" type="radio" name="sex" value="{{i}}" name="sex" [(ngModel)]="user.sex">
+        <label class="form-check-label">{{i}}</label>
+      </div>
+  
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="sex" value="none" checked name="sex" [(ngModel)]="user.sex">
+        <label class="form-check-label">Không xác định</label>
+      </div>
+    </div>
+
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" name="comfirm" [(ngModel)]="user.comfirm" required  #check> {{check.valid}}
+      <label class="form-check-label">
+        Tôi đã đọc kĩ và đồng ý điều khoản sử dụng
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Đăng Kí</button>
+  </form>
+</div>
+
+<h2>Data Submit</h2>
+{{user |json}}
+{{error}}
+{{error2}}

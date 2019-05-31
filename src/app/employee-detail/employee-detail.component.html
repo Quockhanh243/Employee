@@ -1,0 +1,93 @@
+<div class="container-fluid" style="text-align: center">
+  <h1>Thông Tin Nhân Viên</h1>
+  <div class="container">
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <td colspan="1">
+          <form class="well form-horizontal" style="width: 800px; display: inline-block">
+            <div class="form-group">
+              <img src="/assets/images/465128.png" atl="Hình Ảnh" style="width: 150px; height: 150px">
+            </div>
+            <div class="form-group row">
+              <label for="example-text-input" class="col-2 col-form-label">Họ Tên:</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="{{employee.hoTen}}" id="example-text-input" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-search-input" class="col-2 col-form-label">Ngày Sinh</label>
+              <div class="col-10">
+                <input class="form-control" type="input" value="{{employee.ngaySinh | date: 'dd/MM/yyyy'}}" id="example-search-input" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-email-input" class="col-2 col-form-label">Quê Quán</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="{{employee.queQuan}}" id="example-email-input">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-url-input" class="col-2 col-form-label">Giới Tính:</label>
+              <div class="col-10" *ngIf="employee.gioiTinh === 0">
+                <input class="form-control" type="text" value="Nam" id="example-url-input">
+              </div>
+              <div class="col-10" *ngIf="employee.gioiTinh === 1">
+                <input class="form-control" type="text" value="Nữ">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-tel-input" class="col-2 col-form-label">Phone:</label>
+              <div class="col-10">
+                <input class="form-control" type="tel" value="{{employee.sdt}}" id="example-tel-input">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Dân Tộc:</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="{{employee.danToc}}" id="example-password-input">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-number-input" class="col-2 col-form-label">Số CMT:</label>
+              <div class="col-10">
+                <input class="form-control" type="number" value="{{employee.soCMT}}" id="example-number-input" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-datetime-local-input" class="col-2 col-form-label">Nơi Cấp:</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="{{employee.noiCap}}" id="example-datetime-local-input">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-date-input" class="col-2 col-form-label">Ngày Vào Làm</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="{{employee.ngayVaoLam | date: 'dd-MM-yyyy'}}" id="example-date-input">{{date}}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-month-input" class="col-2 col-form-label">Ngày Chính Thức</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="{{employee.ngayThuViec | date: 'dd-MM-yyyy'}}" id="example-month-input">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-week-input" class="col-2 col-form-label">Phòng Ban:</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="{{employee.phongBan.tenPB}}" id="example-week-input">
+              </div>
+            </div>
+            <a routerLink="/employee/list"><button class="btn btn-success">Xác Nhận</button></a>
+            <a routerLink="/employee/list"><button class="btn btn-danger">Xóa</button></a>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button class="btn btn-primary float-left" id="previous" (click) = goPre() *ngIf="employeeID > 1"><i class="fa fa-angle-left" aria-hidden="true">Trước</i></button>
+    <button class="btn btn-primary float-right" id="next" (click) = goNext() *ngIf="employeeID < count || employeeID === 1" aria-hidden="true">Sau<i class="fa fa-angle-right" aria-hidden="true" ></i></button>
+  </div>
+</div>

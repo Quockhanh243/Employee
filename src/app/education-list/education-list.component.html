@@ -1,0 +1,45 @@
+<div class="content container-fluid">
+  <div class="sidenav col-md-2">
+    <a routerLink="/department/list">Quản Lý Phòng Ban</a>
+    <a routerLink="/labour/list">Quản Lý Hợp Đồng</a>
+    <a routerLink="/education/list">Quản Lý Học Vấn</a>
+    <a routerLink="/process/list">Quá Trình Công Tác</a>
+    <button class="dropdown-btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Khen Thưởng - Kỉ Luật
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+      <a routerLink="/adward" class="dropdown-item">Khen Thưởng</a>
+      <a routerLink="/disclipline" class="dropdown-item">Kỉ Luật</a>
+    </div>
+  </div>
+  <div class="col-md-7 content2">
+    <h1>Học Vấn</h1>
+    <button class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Tạo Mới</button>
+    <table id="example2" class="table table-bordered table-hover dataTable" role="grid"
+           aria-describedby="example2_info">
+      <thead>
+      <tr role="row">
+        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending"
+            style="width: 100px">Mã Học Vấn
+        </th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+            aria-label="Browser: activate to sort column ascending" style="width: 700px; text-align: center">Tên Học Vấn
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Đại Học - Học Viện</td>
+        </tr>
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
+  <div class="col-md-3">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-success my-2 my-sm-0" type="button">Search <i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>

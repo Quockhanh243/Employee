@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Thêm Phòng Ban</h2>
+  <form action="" style="width: 300px" [formGroup]="addDepartmentForm">
+    <div class="form-group">
+      <label>Tên Phòng Ban</label>
+      <input type="text" class="form-control" formControlName="tenPB">
+    </div>
+    <div class="form-group">
+      <label>Số Điện Thoại</label>
+      <input type="text" class="form-control" formControlName="sdt">
+    </div>
+    <div class="form-group">
+      <label>Địa Chỉ</label>
+      <input type="text" class="form-control" formControlName="diaChi">
+    </div>
+    <button class="btn btn-success" type="submit" (click)=onSubmit()>Thêm Mới</button>
+  </form>
+  {{addDepartmentForm.value | json}}
+</div>
